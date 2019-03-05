@@ -14,6 +14,7 @@
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
+    "noty": "^3.2.0-beta",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-redux": "^6.0.1",

@@ -57,7 +57,7 @@ class RoomScreen extends PureComponent {
                     </table>
 
                     <div className="spinner">
-                        <BeatLoader size="8" color="#95a5a6" loading={ isGettingRooms } />
+                        <BeatLoader size={ 8 } color="#95a5a6" loading={ isGettingRooms } />
                     </div>
                 </div>
             </div>
