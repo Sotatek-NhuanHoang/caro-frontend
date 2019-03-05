@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import CaroBoard from './CaroBoard';
+import CurrentUser from './CurrentUser';
 
 import './MatchScreen.scss';
 
@@ -15,7 +16,13 @@ class MatchScreen extends PureComponent {
 
                 {/* Users info */}
                 <div className="user-container">
+                    <CurrentUser />
+                    <CurrentUser />
 
+                    {/* Exit room button */}
+                    <button className="exit-button">
+                        <i className="fas fa-sign-out-alt fa-lg text-dark"></i>
+                    </button>
                 </div>
             </div>
         );

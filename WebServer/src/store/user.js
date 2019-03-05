@@ -42,6 +42,7 @@ export const user_LOGIN = ({ accessToken, facebookId }) => async (dispatch) => {
                 id: response._id,
                 facebookId: response.facebookId,
                 username: response.username,
+                avatar: response.avatar,
                 token: response.token,
             },
         }));

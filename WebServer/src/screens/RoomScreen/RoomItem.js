@@ -8,7 +8,7 @@ class RoomItem extends PureComponent {
         return (
             <tr className="room-item">
                 <td>Nhuan</td>
-                <td class="text-right">1/2</td>
+                <td className="text-right">1/2</td>
             </tr>
         );
     }
