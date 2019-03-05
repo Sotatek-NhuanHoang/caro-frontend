@@ -8,6 +8,7 @@
     "caro-config": "./src/config",
     "caro-screens": "./src/screens",
     "caro-service": "./src/service",
+    "caro-socket": "./src/socket",
     "caro-store": "./src/store",
     "caro-styles": "./src/styles",
     "immutable": "^4.0.0-rc.12",
@@ -27,6 +28,8 @@
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
+    "socket.io-client": "^2.2.0",
+    "socketio-wildcard": "^2.0.0",
     "spectre.css": "^0.5.8"
   },
   "scripts": {

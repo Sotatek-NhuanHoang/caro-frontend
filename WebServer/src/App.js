@@ -13,12 +13,11 @@ import 'spectre.css/dist/spectre.min.css';
 import 'spectre.css/dist/spectre-exp.min.css';
 import 'spectre.css/dist/spectre-icons.min.css';
 
-// Noty library
-// import 'noty/lib/noty.css';
-
-
 // Caro style
 import 'caro-styles/index.scss';
+
+// Run socket
+import 'caro-socket';
 
 
 class App extends Component {
