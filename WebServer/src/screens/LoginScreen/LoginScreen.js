@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 import { user_LOGIN } from 'caro-store/user';
+import { showSpinner, hideSpinner } from 'caro-service/SpinnerService';
 
 import './LoginScreen.scss';
 
@@ -15,6 +16,14 @@ class LoginScreen extends PureComponent {
     }
 
     componentDidUpdate(prevProps) {
+        if (!prevProps.isLogging && this.props.isLogging) {
+            showSpinner();
+        }
+
+        if (prevProps.isLogging && !this.props.isLogging) {
+            hideSpinner();
+        }
+
         if (!prevProps.currentUserId && this.props.currentUserId) {
             this.props.history.push('/rooms');
         }
@@ -22,6 +31,7 @@ class LoginScreen extends PureComponent {
 
     onLoginButtonPressed() {
         const FB = window.FB;
+        
         FB.login(() => {
             FB.getLoginStatus((response) => {
                 if (response.status !== 'connected') {
@@ -53,6 +63,7 @@ class LoginScreen extends PureComponent {
 
 const mapStateToProps = ({ user }) => ({
     currentUserId: user.currentUser.id,
+    isLogging: user.isLogging,
 });
 
 const mapDispatchToProps = (dispatch) => ({

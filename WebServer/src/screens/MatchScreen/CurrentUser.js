@@ -14,7 +14,7 @@ class CurrentUser extends PureComponent {
                 <img className="user-avatar" alt="avatar" src={ currentUser.avatar } />
                 <p className="user-name text-bold">{ currentUser.username }</p>
                 
-                <div class="chip">
+                <div className="chip">
                     Wins: 12
                 </div>
 

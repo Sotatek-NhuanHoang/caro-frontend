@@ -5,11 +5,13 @@ import storage from 'redux-persist/lib/storage';
 
 
 // reducers
+import globalReducer from './user';
 import roomReducer from './room';
 import userReducer from './user';
 
 
 const reducers = combineReducers({
+    global: globalReducer,
     room: roomReducer,
     user: persistReducer({
         key: 'user',
