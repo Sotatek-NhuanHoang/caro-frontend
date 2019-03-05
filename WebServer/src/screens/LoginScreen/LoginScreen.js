@@ -31,7 +31,7 @@ class LoginScreen extends PureComponent {
 
     onLoginButtonPressed() {
         const FB = window.FB;
-        
+
         FB.login(() => {
             FB.getLoginStatus((response) => {
                 if (response.status !== 'connected') {

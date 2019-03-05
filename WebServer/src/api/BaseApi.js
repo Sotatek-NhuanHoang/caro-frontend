@@ -1,5 +1,7 @@
 import { create } from 'apisauce';
 import Config from 'caro-config';
+import store from 'caro-store';
+import _ from 'lodash';
 
 
 const Api = create({
@@ -13,8 +15,15 @@ const Api = create({
 
 const BaseApi = {
     GET: async (endPoint, params = {}) => {
+        const { user } = store.getState();
+        const token = _.get(user, ['currentUser', 'token']);
+
         try {
-            const response = await Api.get(endPoint, params);
+            const response = await Api.get(endPoint, params, {
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+            });
 
             if (!response.ok) {
                 throw new Error(response.data.message);
@@ -22,14 +31,20 @@ const BaseApi = {
 
             return response.data;
         } catch (error) {
-            console.log(error.message);
             throw error;
         }
     },
 
     POST: async (endPoint, params = {}) => {
+        const { user } = store.getState();
+        const token = _.get(user, ['currentUser', 'token']);
+
         try {
-            const response = await Api.post(endPoint, params);
+            const response = await Api.post(endPoint, params, {
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                },
+            });
 
             if (!response.ok) {
                 throw new Error(response.data.message);
@@ -37,7 +52,6 @@ const BaseApi = {
 
             return response.data;
         } catch (error) {
-            console.log(error.message);
             throw error;
         }
     },

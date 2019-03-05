@@ -49,4 +49,15 @@
     .table tr:hover {
         cursor: pointer;
     }
+    .table tr td {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .spinner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2rem;
+    }
 }

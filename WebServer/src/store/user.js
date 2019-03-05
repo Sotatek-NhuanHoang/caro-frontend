@@ -1,6 +1,6 @@
 import { handleActions, createAction } from 'redux-actions';
 import { fromJS } from 'immutable';
-// import { createSelector } from 'reselect';
+import { createSelector } from 'reselect';
 // import _ from 'lodash';
 import UserApi from 'caro-api/UserApi';
 
@@ -78,6 +78,13 @@ export const reducer = handleActions({
  * Selectors
  * =====================================================
  */
+
+export const otherUserSelector = createSelector(
+    (user, userId) => ({ otherUsers: user.otherUsers, userId: userId, }),
+    ({ otherUsers, userId }) => {
+        return otherUsers[userId];
+    }
+);
 
 
 
